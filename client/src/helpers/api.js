@@ -1,8 +1,8 @@
 import axios from 'axios'
 require('dotenv').config();
 export const API = () => {
-    // const baseUrl = process.env.VUE_APP_SERVER_API_URL;
-    const baseUrl = 'http://16.171.197.176:3000';
+    const baseUrl = 'http://localhost:3000';
+    // const baseUrl = 'http://api.adsearch.tech/';
     return axios.create({
         baseURL: baseUrl,
         headers: {

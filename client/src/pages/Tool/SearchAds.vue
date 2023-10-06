@@ -424,6 +424,31 @@ export default {
               break;
             }
           }
+          // After retrieving data and populating ArrayPage
+          console.log(this.ArrayPage);
+
+          // Convert ArrayPage to JSON string
+          const arrayPageJson = JSON.stringify(this.filteredArray, null, 2);  // Use null and 2 for pretty formatting
+
+          // Create a Blob with the JSON data
+          const blob = new Blob([arrayPageJson], { type: 'application/json' });
+
+          // Create a link to download the file
+          const link = document.createElement('a');
+          link.href = window.URL.createObjectURL(blob);
+          link.download = 'arrayPage.json';
+
+          // Append the link to the body
+          document.body.appendChild(link);
+
+          // Trigger a click event to download the file
+          link.click();
+
+          // Remove the link from the body
+          document.body.removeChild(link);
+
+          // Display completion message
+          console.log('ArrayPage exported to arrayPage.json');
           return alert('Hoàn thành');
         }else{
           return alert('Không thể lấy dữ liệu từ fb');

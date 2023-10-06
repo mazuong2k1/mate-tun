@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import SearchAds from '@/pages/tool/SearchAds'
-
+import ImportToShow from '@/pages/tool/ImportToShow'
 Vue.use(Router)
 
 export default new Router({
@@ -16,6 +16,11 @@ export default new Router({
       path: '/tool',
       name: 'Search Ads',
       component: SearchAds
+    },
+    {
+      path: '/import',
+      name: 'Import To Show',
+      component: ImportToShow
     },
     {
       path: '*',
